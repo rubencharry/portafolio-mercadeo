@@ -19,6 +19,9 @@
         <a href="#experience" class="nav__link" data-section="experience">EXPERIENCIA</a>
       </li>
       <li>
+        <a href="#tools" class="nav__link" data-section="tools">HERRAMIENTAS</a>
+      </li>
+      <li>
         <a href="#contact" class="nav__link" data-section="contact">CONTACTO</a>
       </li>
     </ul>
@@ -39,6 +42,7 @@
       <li><a href="#hero" class="mobile-menu__link" data-section="hero">SOBRE MÍ</a></li>
       <li><a href="#work" class="mobile-menu__link" data-section="work">TRABAJOS</a></li>
       <li><a href="#experience" class="mobile-menu__link" data-section="experience">EXPERIENCIA</a></li>
+      <li><a href="#tools" class="mobile-menu__link" data-section="tools">HERRAMIENTAS</a></li>
       <li><a href="#contact" class="mobile-menu__link" data-section="contact">CONTACTO</a></li>
     </ul>
     <a href="#contact" class="mobile-menu__cta">CONTRÁTAME</a>
@@ -332,7 +336,7 @@
     });
   }
 
-  const sectionIds = ['hero', 'work', 'experience', 'contact'];
+  const sectionIds = ['hero', 'work', 'experience', 'tools', 'contact'];
   const sectionEls = sectionIds
     .map((id) => document.getElementById(id))
     .filter(Boolean) as HTMLElement[];
