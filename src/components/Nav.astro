@@ -1,0 +1,374 @@
+---
+---
+
+<header class="nav" id="main-nav" role="banner">
+  <a href="/" class="nav__logo" aria-label="Valentina — Inicio">
+    <span class="nav__logo-mark" aria-hidden="true"></span>
+    PORTAFOLIO
+  </a>
+
+  <nav class="nav__center" aria-label="Navegación principal">
+    <ul class="nav__links" role="list">
+      <li>
+        <a href="#hero" class="nav__link" data-section="hero">SOBRE MÍ</a>
+      </li>
+      <li>
+        <a href="#work" class="nav__link" data-section="work">TRABAJOS</a>
+      </li>
+      <li>
+        <a href="#experience" class="nav__link" data-section="experience">EXPERIENCIA</a>
+      </li>
+      <li>
+        <a href="#contact" class="nav__link" data-section="contact">CONTACTO</a>
+      </li>
+    </ul>
+  </nav>
+
+  <a href="#contact" class="nav__cta">CONTRÁTAME</a>
+
+  <button class="nav__hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu">
+    <span class="hamburger__bar"></span>
+    <span class="hamburger__bar"></span>
+    <span class="hamburger__bar"></span>
+  </button>
+</header>
+
+<div class="nav__mobile-menu" id="mobile-menu" aria-hidden="true">
+  <nav aria-label="Navegación móvil">
+    <ul class="mobile-menu__links" role="list">
+      <li><a href="#hero" class="mobile-menu__link" data-section="hero">SOBRE MÍ</a></li>
+      <li><a href="#work" class="mobile-menu__link" data-section="work">TRABAJOS</a></li>
+      <li><a href="#experience" class="mobile-menu__link" data-section="experience">EXPERIENCIA</a></li>
+      <li><a href="#contact" class="mobile-menu__link" data-section="contact">CONTACTO</a></li>
+    </ul>
+    <a href="#contact" class="mobile-menu__cta">CONTRÁTAME</a>
+  </nav>
+</div>
+
+<style>
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    padding: 0 var(--margin-desktop);
+    height: var(--nav-height);
+    transition:
+      background 0.5s ease,
+      border-bottom-color 0.5s ease,
+      backdrop-filter 0.5s ease;
+    border-bottom: 1px solid transparent;
+  }
+
+  .nav.is-scrolled {
+    background: rgba(13, 13, 13, 0.82);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    border-bottom-color: rgba(255, 255, 255, 0.055);
+  }
+
+  /* ── Logo ─────────────────────────────────────────────── */
+  .nav__logo {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    user-select: none;
+  }
+
+  .nav__logo-mark {
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: var(--primary-container);
+    flex-shrink: 0;
+  }
+
+  /* ── Center links ─────────────────────────────────────── */
+  .nav__center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 44px;
+  }
+
+  .nav__link {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: rgba(200, 198, 197, 0.65);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.25s ease;
+  }
+
+  .nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--primary-container);
+    transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav__link:hover {
+    color: #ffffff;
+  }
+
+  .nav__link:hover::after {
+    width: 100%;
+  }
+
+  .nav__link--active {
+    color: #ffffff;
+  }
+
+  .nav__link--active::after {
+    width: 100%;
+  }
+
+  /* ── CTA ──────────────────────────────────────────────── */
+  .nav__cta {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 26px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.25rem;
+    flex-shrink: 0;
+    transition:
+      border-color 0.3s ease,
+      color 0.3s ease,
+      background 0.3s ease;
+  }
+
+  .nav__cta:hover {
+    border-color: var(--primary-container);
+    color: var(--primary-container);
+    background: rgba(220, 20, 60, 0.06);
+  }
+
+  /* ── Hamburger ────────────────────────────────────────── */
+  .nav__hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    flex-shrink: 0;
+  }
+
+  .hamburger__bar {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  .nav__hamburger[aria-expanded="true"] .hamburger__bar:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .nav__hamburger[aria-expanded="true"] .hamburger__bar:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav__hamburger[aria-expanded="true"] .hamburger__bar:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  /* ── Mobile menu overlay ──────────────────────────────── */
+  .nav__mobile-menu {
+    display: none;
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(13, 13, 13, 0.97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    z-index: 99;
+    padding: 48px var(--margin-mobile);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav__mobile-menu.is-open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-menu__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 36px;
+    margin-bottom: 48px;
+  }
+
+  .mobile-menu__link {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: rgba(200, 198, 197, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .mobile-menu__link:hover,
+  .mobile-menu__link:active,
+  .mobile-menu__link--active {
+    color: #ffffff;
+  }
+
+  .mobile-menu__cta {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 36px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 0.25rem;
+    transition:
+      border-color 0.3s ease,
+      color 0.3s ease,
+      background 0.3s ease;
+  }
+
+  .mobile-menu__cta:hover {
+    border-color: var(--primary-container);
+    color: var(--primary-container);
+    background: rgba(220, 20, 60, 0.06);
+  }
+
+  /* ── Mobile ───────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .nav {
+      padding: 0 var(--margin-mobile);
+    }
+
+    .nav__center {
+      display: none;
+    }
+
+    .nav__cta {
+      display: none;
+    }
+
+    .nav__hamburger {
+      display: flex;
+    }
+
+    .nav__mobile-menu {
+      display: flex;
+    }
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const hamburger = nav?.querySelector('.nav__hamburger') as HTMLButtonElement | null;
+  const mobileMenu = document.getElementById('mobile-menu');
+  let ticking = false;
+
+  // ── Scroll → fondo con blur ─────────────────────────────
+  const updateScroll = () => {
+    nav?.classList.toggle('is-scrolled', window.scrollY > 20);
+    ticking = false;
+  };
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateScroll); ticking = true; }
+  }, { passive: true });
+
+  updateScroll();
+
+  // ── Active section via IntersectionObserver ─────────────
+  const allNavLinks = document.querySelectorAll<HTMLAnchorElement>('[data-section]');
+
+  function setActive(sectionId: string) {
+    allNavLinks.forEach((link) => {
+      const isActive = link.dataset.section === sectionId;
+      link.classList.toggle('nav__link--active', isActive && link.classList.contains('nav__link'));
+      link.classList.toggle('mobile-menu__link--active', isActive && link.classList.contains('mobile-menu__link'));
+    });
+  }
+
+  const sectionIds = ['hero', 'work', 'experience', 'contact'];
+  const sectionEls = sectionIds
+    .map((id) => document.getElementById(id))
+    .filter(Boolean) as HTMLElement[];
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+  );
+
+  sectionEls.forEach((el) => observer.observe(el));
+
+  // ── Menú móvil ──────────────────────────────────────────
+  const closeMenu = () => {
+    hamburger?.setAttribute('aria-expanded', 'false');
+    mobileMenu?.classList.remove('is-open');
+    mobileMenu?.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  };
+
+  hamburger?.addEventListener('click', () => {
+    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    if (isOpen) {
+      closeMenu();
+    } else {
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu?.classList.add('is-open');
+      mobileMenu?.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+
+  mobileMenu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+</script>

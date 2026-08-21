@@ -1,0 +1,705 @@
+---
+
+---
+
+<section class="hero" id="hero" aria-labelledby="hero-name">
+  <!-- ── Ambient background ───────────────────────────── -->
+  <div class="hero__ambient" aria-hidden="true">
+    <div class="ambient__glow"></div>
+    <div class="ambient__grid"></div>
+    <div class="ambient__bottom-rule"></div>
+  </div>
+
+  <!-- ── Left: Text content ───────────────────────────── -->
+  <div class="hero__content">
+    <div class="hero__eyebrow">
+      <span class="eyebrow__dash"></span>
+      <span class="eyebrow__text">ESPECIALISTA EN MARKETING</span>
+      <span class="eyebrow__sep" aria-hidden="true">/</span>
+      <span class="eyebrow__text">CREADORA DE CONTENIDO</span>
+    </div>
+
+    <h1 class="hero__name" id="hero-name">VALENTINA</h1>
+
+    <div class="hero__bio-block">
+      <span class="hero__bio-label">SOBRE MÍ</span>
+      <span class="hero__location">
+        <svg class="hero__location-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        BOGOTÁ, COLOMBIA
+      </span>
+      <p class="hero__bio-lead">"Apasionada por crear estrategias que conectan."</p>
+      <p class="hero__bio">
+        Combina creatividad, análisis y estrategia para construir marcas que dejan huella. <strong>Profesional
+        en Marketing</strong>, con experiencia combinando estrategia de comunicación,
+        creación de contenido y diseño aplicado al marketing, tanto en marcas
+        comerciales como en un entorno institucional.<br><br> Mi trabajo no se limita a
+        publicar: parto de entender el objetivo de una marca —su público, su
+        mensaje, su contexto— para luego traducirlo en contenido, piezas y
+        campañas que realmente comuniquen algo. <br><br> He trabajado desde la
+        conceptualización de una identidad de marca hasta la ejecución de piezas
+        para redes sociales, campañas y comunicación institucional. <br><br>Lo que me
+        diferencia: puedo moverme con la misma solidez entre un brief comercial de
+        una marca que necesita posicionarse y un entorno institucional donde la
+        comunicación exige precisión, formalidad y claridad. Esa versatilidad es
+        la base de cómo trabajo.
+      </p>
+    </div>
+
+    <div class="hero__skills" role="list" aria-label="Habilidades principales">
+      <span class="skill" role="listitem">SEO / SEM</span>
+      <span class="skill" role="listitem">Analítica</span>
+      <span class="skill" role="listitem">Estrategia de Marca</span>
+      <span class="skill" role="listitem">Creación de Contenido</span>
+    </div>
+  </div>
+
+  <!-- ── Right: Abstract visual (sin foto) ────────────── -->
+  <div class="hero__visual" aria-hidden="true">
+    <!-- Orbiting system -->
+    <div class="orb">
+      <div class="orb__core"></div>
+      <div class="orb__ring orb__ring--inner"></div>
+      <div class="orb__ring orb__ring--outer"></div>
+    </div>
+
+    <!-- Floating metric cards -->
+    <div class="metric metric--roi">
+      <span class="metric__accent"></span>
+      <span class="metric__value">Multisector</span>
+      <span class="metric__label">Marcas | Servicios | Sector público</span>
+    </div>
+
+    <div class="metric metric--brands">
+      <span class="metric__accent"></span>
+      <span class="metric__value">End to end</span>
+      <span class="metric__label">Estrategia | Contenido | Diseño</span>
+    </div>
+
+    <div class="metric metric--growth">
+      <span class="metric__accent"></span>
+      <span class="metric__value">Desde cero</span>
+      <span class="metric__label">Identidad | Branding | Contenido</span>
+    </div>
+  </div>
+
+</section>
+
+<style>
+  /* ── Hero container ──────────────────────────────────── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: calc(var(--nav-height) + clamp(40px, 6vh, 80px));
+    padding-left: var(--margin-desktop);
+    padding-right: var(--margin-desktop);
+    padding-bottom: clamp(24px, 4vh, 48px);
+    overflow: hidden;
+  }
+
+  /* ── Ambient background ──────────────────────────────── */
+  .hero__ambient {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .ambient__glow {
+    position: absolute;
+    top: -15%;
+    right: -8%;
+    width: 62%;
+    height: 90%;
+    background: radial-gradient(
+      ellipse 55% 70% at 60% 35%,
+      rgba(220, 20, 60, 0.13) 0%,
+      rgba(220, 20, 60, 0.05) 45%,
+      transparent 72%
+    );
+    animation: glowDrift 12s ease-in-out infinite;
+  }
+
+  .ambient__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    background-size: 58px 58px;
+    mask-image: radial-gradient(
+      ellipse 65% 75% at 72% 52%,
+      rgba(0, 0, 0, 0.9) 0%,
+      transparent 80%
+    );
+    -webkit-mask-image: radial-gradient(
+      ellipse 65% 75% at 72% 52%,
+      rgba(0, 0, 0, 0.9) 0%,
+      transparent 80%
+    );
+  }
+
+  .ambient__bottom-rule {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(220, 20, 60, 0.25) 40%,
+      rgba(220, 20, 60, 0.25) 60%,
+      transparent 100%
+    );
+  }
+
+  @keyframes glowDrift {
+    0%,
+    100% {
+      opacity: 1;
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      opacity: 0.8;
+      transform: translate(2%, 1.5%) scale(1.04);
+    }
+    66% {
+      opacity: 0.9;
+      transform: translate(-1%, -2%) scale(0.97);
+    }
+  }
+
+  /* ── Left: Content ───────────────────────────────────── */
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 58%;
+    max-width: 58%;
+    padding-bottom: 48px;
+  }
+
+  /* Eyebrow */
+  .hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both 0.15s;
+  }
+
+  .eyebrow__dash {
+    display: block;
+    width: 26px;
+    height: 1px;
+    background: var(--primary-container);
+    flex-shrink: 0;
+  }
+
+  .eyebrow__text {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    color: var(--primary-container);
+  }
+
+  .eyebrow__sep {
+    font-size: 11px;
+    color: var(--outline-variant);
+  }
+
+  /* Name */
+  .hero__name {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7vw, 88px);
+    font-weight: 800;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both 0.3s;
+  }
+
+  /* Bio block */
+  .hero__bio-block {
+    max-width: 80%;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both 0.45s;
+  }
+
+  .hero__bio-label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .hero__location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    color: rgba(200, 198, 197, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .hero__location-icon {
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+    color: var(--primary-container);
+  }
+
+  .hero__bio-lead {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.5;
+    color: #C8A45A;
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero__bio {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #888888;
+  }
+
+  /* Skills */
+  .hero__skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    opacity: 0;
+    animation: revealUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both 0.6s;
+  }
+
+  .skill {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    padding: 9px 22px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.025);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: default;
+    transition:
+      border-color 0.3s ease,
+      color 0.3s ease,
+      background 0.3s ease;
+  }
+
+  .skill:hover {
+    border-color: rgba(220, 20, 60, 0.45);
+    color: #ffffff;
+    background: rgba(220, 20, 60, 0.06);
+  }
+
+  /* ── Right: Visual ───────────────────────────────────── */
+  .hero__visual {
+    position: absolute;
+    right: 0;
+    top: var(--nav-height);
+    bottom: 0;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  /* Orb system */
+  .orb {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .orb__core {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(
+      circle at 38% 38%,
+      rgba(220, 20, 60, 0.24) 0%,
+      rgba(220, 20, 60, 0.07) 55%,
+      transparent 75%
+    );
+    animation: orbBreath 8s ease-in-out infinite;
+  }
+
+  .orb__ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid transparent;
+  }
+
+  .orb__ring--inner {
+    width: 268px;
+    height: 268px;
+    border-color: rgba(220, 20, 60, 0.2);
+    animation: ringCW 20s linear infinite;
+  }
+
+  .orb__ring--inner::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 9px;
+    height: 9px;
+    background: var(--primary-container);
+    border-radius: 50%;
+    box-shadow:
+      0 0 12px 3px rgba(220, 20, 60, 0.55),
+      0 0 24px 6px rgba(220, 20, 60, 0.2);
+  }
+
+  .orb__ring--outer {
+    width: 360px;
+    height: 360px;
+    border-color: rgba(255, 255, 255, 0.045);
+    animation: ringCCW 32s linear infinite;
+  }
+
+  .orb__ring--outer::after {
+    content: "";
+    position: absolute;
+    bottom: -3.5px;
+    right: 18%;
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+  }
+
+  @keyframes orbBreath {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.14);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes ringCW {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes ringCCW {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+
+  /* ── Metric cards ────────────────────────────────────── */
+  .metric {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border-radius: 0.5rem;
+    padding: 18px 26px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      border-color 0.3s ease,
+      background 0.3s ease;
+    min-width: 148px;
+  }
+
+  .metric:hover {
+    border-color: rgba(220, 20, 60, 0.38);
+    background: rgba(220, 20, 60, 0.04);
+  }
+
+  .metric__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      var(--primary-container) 0%,
+      rgba(220, 20, 60, 0.1) 100%
+    );
+  }
+
+  .metric__value {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: #ffffff;
+  }
+
+  .metric__label {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(160, 160, 160, 0.8);
+    white-space: nowrap;
+  }
+
+  .metric--roi {
+    top: 14%;
+    right: 14%;
+    animation:
+      revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both 0.9s,
+      floatY 6.5s ease-in-out infinite 1.7s;
+  }
+
+  .metric--brands {
+    bottom: 20%;
+    right: 7%;
+    animation:
+      revealUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both 1.05s,
+      floatY 7.5s ease-in-out infinite 1.85s;
+  }
+
+  .metric--growth {
+    top: 50%;
+    left: 4%;
+    transform: translateY(-50%);
+    animation:
+      revealUpCentered 0.8s cubic-bezier(0.22, 1, 0.36, 1) both 1.2s,
+      floatYCentered 5.8s ease-in-out infinite 2s;
+  }
+
+  /* ── Scroll indicator ────────────────────────────────── */
+  .hero__scroll {
+    position: absolute;
+    bottom: 36px;
+    left: var(--margin-desktop);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: revealUp 0.8s ease both 1.45s;
+    z-index: 2;
+  }
+
+  .scroll__label {
+    font-family: var(--font-body);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    color: rgba(255, 255, 255, 0.22);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .scroll__bar {
+    width: 1px;
+    height: 52px;
+    background: linear-gradient(
+      to bottom,
+      rgba(220, 20, 60, 0.65),
+      transparent
+    );
+    transform-origin: top center;
+    transform: scaleY(0);
+    animation: scrollBarReveal 2.6s ease-in-out infinite 1.9s;
+  }
+
+  /* ── Shared animations ───────────────────────────────── */
+  @keyframes revealUp {
+    from {
+      opacity: 0;
+      transform: translateY(22px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes revealUpCentered {
+    from {
+      opacity: 0;
+      transform: translateY(calc(-50% + 22px));
+    }
+    to {
+      opacity: 1;
+      transform: translateY(-50%);
+    }
+  }
+
+  @keyframes floatY {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes floatYCentered {
+    0%,
+    100% {
+      transform: translateY(-50%);
+    }
+    50% {
+      transform: translateY(calc(-50% - 10px));
+    }
+  }
+
+  @keyframes scrollBarReveal {
+    0% {
+      transform: scaleY(0);
+      opacity: 1;
+    }
+    55% {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scaleY(1);
+      opacity: 0;
+    }
+  }
+
+  /* ── Responsive ──────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .hero {
+      flex-direction: column;
+      justify-content: center;
+      padding-left: var(--margin-mobile);
+      padding-right: var(--margin-mobile);
+      padding-bottom: 60px;
+      gap: 56px;
+    }
+
+    .hero__content {
+      flex: none;
+      max-width: 100%;
+      padding-bottom: 0;
+      text-align: center;
+    }
+
+    .hero__eyebrow {
+      justify-content: center;
+    }
+
+    .hero__bio-block {
+      max-width: 100%;
+      text-align: left;
+    }
+
+    .hero__location {
+      justify-content: center;
+    }
+
+    .hero__skills {
+      justify-content: center;
+    }
+
+    .hero__name {
+      font-size: clamp(44px, 12vw, 64px);
+    }
+
+    .hero__visual {
+      position: relative;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      width: 100%;
+      height: 280px;
+    }
+
+    .orb {
+      width: 220px;
+      height: 220px;
+    }
+
+    .orb__core {
+      width: 110px;
+      height: 110px;
+    }
+    .orb__ring--inner {
+      width: 168px;
+      height: 168px;
+    }
+    .orb__ring--outer {
+      width: 220px;
+      height: 220px;
+    }
+
+    .metric {
+      min-width: 120px;
+      padding: 14px 18px 12px;
+    }
+
+    .metric__value {
+      font-size: 22px;
+    }
+
+    .metric--roi {
+      top: 8%;
+      right: 4%;
+    }
+    .metric--brands {
+      bottom: 8%;
+      right: 4%;
+    }
+    .metric--growth {
+      top: 50%;
+      left: 4%;
+    }
+
+    .hero__scroll {
+      display: none;
+    }
+  }
+</style>
